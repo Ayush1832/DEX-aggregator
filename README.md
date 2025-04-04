@@ -58,11 +58,9 @@ Follow these steps to set up and run the project locally:
 npm run dev
 # or
 yarn dev
-
-
+```
 
 Open http://localhost:3000 in your browser to see the app.
 
 License
 This project is licensed under the MIT License. See the  file for details.
-```
