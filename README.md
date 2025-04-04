@@ -2,8 +2,7 @@
 
 A modern, decentralized exchange (DEX) aggregator built with Next.js and Ethers.js to optimize your trades across multiple DEXes. This application connects to your Ethereum wallet (via MetaMask), searches for the best trade routes, and executes token swaps with a sleek, user-friendly interface.
 
-![DEX Aggregator Screenshot](https://via.placeholder.com/600x400.png?text=DEX+Aggregator+Screenshot)  
-_(Replace this with an actual screenshot of your app once deployed!)_
+![DEX Aggregator Screenshot](public/dex.png)  
 
 ## Features
 
