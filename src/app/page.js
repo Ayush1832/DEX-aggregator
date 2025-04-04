@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Connect from "./components/connect";
 import SearchTrade from "./components/SearchTrade.js";
+import Trade from "./components/Trade";
 import blockchain from "./blockchain.json";
 import { Contract } from "ethers";
 
@@ -13,6 +14,7 @@ export default function Home() {
   const [signer, setSigner] = useState(undefined);
   const [dexes, setDexes] = useState(initialDexes);
   const [trade, setTrade] = useState(undefined);
+  const [token, setToken] = useState(undefined);
 
   useEffect(() => {
     if (signer) {
@@ -37,9 +39,18 @@ export default function Home() {
             </p>
           </div>
           {signer ? (
-            <SearchTrade dexes = {dexes} signer={signer} setTrade= {setTrade}/>
-          ) :  <Connect setSigner={setSigner}/> }
-
+            <>
+              <SearchTrade
+                dexes={dexes}
+                signer={signer}
+                setTrade={setTrade}
+                setToken={setToken}
+              />
+              {trade && <Trade dexes={dexes} trade={trade}  token={token} signer={signer}/>}
+            </>
+          ) : (
+            <Connect setSigner={setSigner} />
+          )}
         </div>
       </div>
     </div>
