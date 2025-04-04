@@ -26,12 +26,11 @@ export default function Home() {
     }
   }, [signer]);
   return (
-    <div className="container-fluid mt-5 mb-5 d-flex justify-content center">
-      <div id="content" className="row">
-        <div id="content-liner" className="col">
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div id="content">
+        <div id="content-inner">
           <div className="text-center">
             <h1 id="title" className="fw-bold">
-              {" "}
               DEX AGGREGATOR
             </h1>
             <p id="sub-title" className="mt-4 fw-bold">
@@ -46,7 +45,14 @@ export default function Home() {
                 setTrade={setTrade}
                 setToken={setToken}
               />
-              {trade && <Trade dexes={dexes} trade={trade}  token={token} signer={signer}/>}
+              {trade && (
+                <Trade
+                  dexes={dexes}
+                  trade={trade}
+                  token={token}
+                  signer={signer}
+                />
+              )}
             </>
           ) : (
             <Connect setSigner={setSigner} />

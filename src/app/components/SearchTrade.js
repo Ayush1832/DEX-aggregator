@@ -78,42 +78,60 @@ export default function SearchTrade({ dexes, signer, setTrade, setToken }) {
   };
 
   return (
-    <form onSubmit={search}>
-      <div className="form-floating mb-3">
+    <form onSubmit={search} className="space-y-6 mt-6">
+      <div className="relative">
         <input
           type="text"
-          className="form-control"
+          className="w-full p-4 bg-[var(--card-bg)] border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200"
           id="tokenIn"
-          placeholder="0x........"
+          placeholder="0x..."
           onChange={(e) => setTokenIn(e.target.value)}
           value={tokenIn}
         />
-        <label htmlFor="tokenIn">Address of token Sold</label>
+        <label
+          htmlFor="tokenIn"
+          className="absolute -top-2 left-3 px-1 bg-[var(--card-bg)] text-sm text-gray-500"
+        >
+          Token to Sell
+        </label>
       </div>
-      <div className="form-floating mb-3">
+      <div className="relative">
         <input
           type="text"
-          className="form-control"
+          className="w-full p-4 bg-[var(--card-bg)] border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200"
           id="tokenOut"
-          placeholder="0x........"
+          placeholder="0x..."
           onChange={(e) => setTokenOut(e.target.value)}
           value={tokenOut}
         />
-        <label htmlFor="tokenOut">Address of token Bought</label>
+        <label
+          htmlFor="tokenOut"
+          className="absolute -top-2 left-3 px-1 bg-[var(--card-bg)] text-sm text-gray-500"
+        >
+          Token to Buy
+        </label>
       </div>
-      <div className="form-floating mb-3">
+      <div className="relative">
         <input
           type="text"
-          className="form-control"
+          className="w-full p-4 bg-[var(--card-bg)] border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200"
           id="amountOut"
-          placeholder="1000...."
+          placeholder="0.0"
           onChange={(e) => setAmountOut(e.target.value)}
           value={amountOut}
         />
-        <label htmlFor="amountOut">Amount of token Bought</label>
+        <label
+          htmlFor="amountOut"
+          className="absolute -top-2 left-3 px-1 bg-[var(--card-bg)] text-sm text-gray-500"
+        >
+          Amount to Buy
+        </label>
       </div>
-      <button type="submit" className="btn btn-primary">
-        Submit
+      <button
+        type="submit"
+        className="w-full py-3 bg-[var(--primary)] text-white rounded-lg shadow-md hover:bg-[var(--secondary)] transition-all duration-300 transform hover:scale-105"
+      >
+        Find Best Trade
       </button>
     </form>
   );
